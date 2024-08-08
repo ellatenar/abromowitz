@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to main)
+media_folder: public/media
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Accent", name: "accent", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "About"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Accent", name: "accent", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Work"
+        name: "work"
+        file: "content/work.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Accent", name: "accent", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Projects Intro Centered Text",
+              name: "projectsIntro",
+              widget: "markdown",
+            }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {
+                  label: Title,
+                  name: title,
+                  widget: string,
+                  default: "Example project",
+                }
+              - {
+                  label: Text,
+                  name: text,
+                  widget: string,
+                  default: "Example description",
+                }
+              - {
+                  label: Link,
+                  name: link,
+                  widget: string,
+                  hint: "Must be a valid URL",
+                  default: "https://example.com",
+                }
+              - {
+                  label: Image,
+                  name: image,
+                  widget: string,
+                  hint: "Must be a valid URL",
+                  default: "https://example.com",
+                }
+          - {
+              label: "Selected Press Intro (centered)",
+              name: "pressIntro",
+              widget: "markdown",
+            }
+          - {
+              label: "Text under project grid",
+              name: "underGridContent",
+              widget: "markdown",
+            }
+
+      - label: "Contact"
+        name: "Contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Accent", name: "accent", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - label: "Social URLs"
+            name: "urls"
+            widget: "list"
+            fields:
+              - { label: URL, name: url, widget: string }
