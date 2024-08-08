@@ -105,3 +105,9 @@ h6 {
 }
 
 /* End CSS Reset */
+
+main {
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}

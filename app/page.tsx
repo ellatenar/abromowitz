@@ -1,17 +1,15 @@
-import Head from "next/head"
-import { Component } from "react"
-import { attributes, react as HomeContent } from "../content/home.md"
+import { attributes, react as HomeContent } from "../content/about.md"
+import styles from "./page.module.css"
+import { karrik } from "@/app/fonts"
 
 const Home = () => {
   let { title } = attributes
   return (
-    <>
-      <article>
-        <h1>{title}</h1>
-        <HomeContent />
-        <ul></ul>
-      </article>
-    </>
+    <main className={styles.home}>
+      <h1 className={karrik.className}>{title}</h1>
+      <HomeContent />
+      <ul></ul>
+    </main>
   )
 }
 

@@ -1,0 +1,82 @@
+.nav {
+  z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  max-width: 60rem;
+}
+
+.nav a {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 0;
+  margin: 1rem;
+}
+
+.active {
+  color: #ffe74c;
+}
+
+.openMobileNav {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .nav {
+    display: none;
+    border: 1px dotted #800080;
+    border-radius: 1rem;
+  }
+
+  .openMobileNav {
+    display: block;
+    outline: revert;
+    border: 2px solid #191919;
+    border-radius: 2rem;
+    background-color: #cbc5e1;
+    padding: 0 1.5rem;
+    transform: rotate(180deg);
+    margin: 1rem auto 0;
+    font-variation-settings: "wght" 900;
+  }
+
+  .openMobileNavExpanded {
+    transform: rotate(0);
+  }
+
+  .visible + .openMobileNav {
+    margin-top: 1rem;
+  }
+
+  .nav a {
+    padding: 1.5rem 5rem;
+  }
+
+  .openMobileNav:focus {
+    outline: revert;
+  }
+
+  .nav.visible {
+    /* animation: pullDown 1.5s forwards; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* @keyframes pullDown {
+      from {
+        margin-top: -28rem;
+      }
+  
+      to {
+        margin-top: 0;
+      }
+    } */
+
+  .flipped {
+    rotate: 180deg;
+  }
+}

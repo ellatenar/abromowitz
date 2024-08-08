@@ -1,0 +1,7 @@
+.home {
+  max-width: 40rem;
+}
+
+.home * + * {
+  padding-top: 1rem;
+}
